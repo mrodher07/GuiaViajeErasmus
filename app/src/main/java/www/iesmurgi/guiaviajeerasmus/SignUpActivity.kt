@@ -21,7 +21,7 @@ class SignUpActivity : AppCompatActivity() {
         binding = ActivitySignUpBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        crearNuevoUsuario(binding.emailEt.text.toString(), binding.passET.text.toString())
+        crearNuevoUsuario()
     }
 
     fun crearNuevoUsuarioDatabase(email: String, clave: String) {
@@ -39,7 +39,7 @@ class SignUpActivity : AppCompatActivity() {
             .addOnFailureListener{ e -> Log.w(ContentValues.TAG, "Error") }
     }
 
-    fun crearNuevoUsuario(email: String, clave: String) {
+    fun crearNuevoUsuario() {
         firebaseAuth = FirebaseAuth.getInstance()
 
         binding.textView.setOnClickListener {
@@ -47,16 +47,16 @@ class SignUpActivity : AppCompatActivity() {
             startActivity(intent)
         }
         binding.button.setOnClickListener {
-            val email = binding.emailEt.text.toString()
-            val pass = binding.passET.text.toString()
+            val gmail = binding.emailEt.text.toString().trim()
+            val pass = binding.passET.text.toString().trim()
             val confirmPass = binding.confirmPassEt.text.toString()
 
-            if (email.isNotEmpty() && pass.isNotEmpty() && confirmPass.isNotEmpty()) {
-                if (pass == confirmPass) {
+            if (gmail.isNotEmpty() && pass.isNotEmpty() && confirmPass.isNotEmpty()) {
+                if (pass.equals(confirmPass)) {
 
-                    firebaseAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener {
+                    firebaseAuth.createUserWithEmailAndPassword(gmail, pass).addOnCompleteListener {
                         if (it.isSuccessful) {
-                            crearNuevoUsuarioDatabase(email.toString(), clave.toString())
+                            crearNuevoUsuarioDatabase(gmail, pass)
                             val intent = Intent(this, SignInActivity::class.java)
                             startActivity(intent)
                         } else {
