@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "736530991608",
+    "project_id": "guiaviajeerasmus",
+    "storage_bucket": "guiaviajeerasmus.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:736530991608:android:f1a43174b9abaa09ce2e0d",
+        "android_client_info": {
+          "package_name": "www.iesmurgi.guiaviajeerasmus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "736530991608-5vpucjg6gghm2gduj3g09884nichj6b0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5m9pVR-Sa4is1D4sBFG_7cD1s4na9Oz0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "736530991608-5vpucjg6gghm2gduj3g09884nichj6b0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
