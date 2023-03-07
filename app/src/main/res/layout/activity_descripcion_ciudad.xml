@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".DescripcionCiudadActivity">
+
+    <Button
+        android:id="@+id/btnLugaresInteres"
+        android:layout_width="293dp"
+        android:layout_height="97dp"
+        android:text="Lugares de Interés"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:cornerRadius="30dp" />
+
+    <Button
+        android:id="@+id/btnLugaresComida"
+        android:layout_width="293dp"
+        android:layout_height="97dp"
+        android:layout_margin="20dp"
+        android:text="Lugares para comer"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:cornerRadius="30dp" />
+
+    <Button
+        android:id="@+id/btnTransporte"
+        android:layout_width="293dp"
+        android:layout_height="97dp"
+        android:text="Transporte"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:cornerRadius="30dp" />
+</LinearLayout>
