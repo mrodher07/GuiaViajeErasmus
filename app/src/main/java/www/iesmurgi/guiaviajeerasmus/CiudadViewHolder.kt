@@ -1,5 +1,6 @@
 package www.iesmurgi.guiaviajeerasmus
 
+import android.content.Intent
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import www.iesmurgi.guiaviajeerasmus.databinding.EsqueletoCiudadesBinding
@@ -16,7 +17,8 @@ class CiudadViewHolder (vista: View):RecyclerView.ViewHolder(vista) {
             }
 
             itemView.setOnClickListener {
-
+                val intent = Intent(itemView.context, ItemCiudadActivity::class.java)
+                intent.putExtra("imagenCiudad", ciudad.imagenCiudad)
             }
         }
 }
