@@ -27,9 +27,17 @@ class CiudadesActivity : AppCompatActivity() {
             Ciudad(1,
                 "Dublin",
                 "Irlanda",
-                "Un pais muy bonito",
+                "Dublín es la capital de la República de Irlanda y desde años ha sido una de las ciudades más llamativas e importantes de Europa. Fue fundada oficialmente por los Vikingos en el año 841, atraídos por lo estratégico de su situación, en el centro de la costa este de la isla.",
                 "Las mejores vistas estan al lado del mar",
-                "Se come muy bien", "Ingles e Irlandes", R.drawable.dublin_icon.toString(), R.drawable.dublin_lugares.toString(), R.drawable.dublin_comida.toString())
+                "Se come muy bien", "Ingles e Irlandes", R.drawable.dublin_icon.toString(), R.drawable.dublin_lugares.toString(), R.drawable.dublin_comida.toString()),
+
+            Ciudad(2,
+                "Vichy",
+                "Francia",
+                "La Francia de Vichy es el nombre que recibe lo que quedó de la República Francesa tras la derrota ante el eje de 1940, con capital en la ciudad-balneario de Vichy (de ahí su nombre) y que se organizó como un estado de corte fascista, siendo considerado un estado títere de la Alemania nazi.",
+                "La ciudad del amor con los lugares más bonitos para visitar con tu pareja",
+                "Se come muy bien", "Francia", R.drawable.vichy_icon.toString(), R.drawable.vichy_lugares.toString(), R.drawable.vichy_comida.toString())
+
 
         )
 
