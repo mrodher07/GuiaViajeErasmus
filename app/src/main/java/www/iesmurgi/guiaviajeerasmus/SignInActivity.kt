@@ -39,13 +39,22 @@ class SignInActivity : AppCompatActivity() {
                 ).addOnCompleteListener{
                     if (it.isSuccessful) {
                         println("aqui entra")
-                        val intent = Intent(this, CiudadesActivity::class.java)
-                        startActivity(intent)
+                        abrirPerfil()
                     } else {
+                        error()
                         Toast.makeText(this, it.exception.toString(), Toast.LENGTH_LONG).show()
                     }
                 }
             }
         }
+    }
+
+    fun error() {
+        Toast.makeText(this, "Ha habido un error", Toast.LENGTH_LONG).show()
+    }
+
+    fun abrirPerfil() {
+        val intent = Intent(this, CiudadesActivity::class.java)
+        startActivity(intent)
     }
 }
