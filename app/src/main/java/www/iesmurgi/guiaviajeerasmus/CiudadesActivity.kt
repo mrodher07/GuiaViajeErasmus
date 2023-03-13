@@ -1,15 +1,23 @@
 package www.iesmurgi.guiaviajeerasmus
 
 import android.content.Intent
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import www.iesmurgi.guiaviajeerasmus.databinding.ActivityCiudadesBinding
 
 class CiudadesActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCiudadesBinding
     private lateinit var miAdapter: CiudadAdapter
     private var lista = listOf<Ciudad>()
+    var auth: FirebaseAuth = FirebaseAuth.getInstance()
+    var user: FirebaseUser? = auth.currentUser
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCiudadesBinding.inflate(layoutInflater)
@@ -59,5 +67,30 @@ class CiudadesActivity : AppCompatActivity() {
             putExtra("CIUDAD", ciudad)
         }
         startActivity(i)
+    }
+
+    //Options menu
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.bottom_nav_menu, menu)
+        return true
+    }
+
+    //Options item
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.navigation_home -> {
+                val intent = Intent(this, CiudadesActivity::class.java)
+                startActivity(intent)
+                true
+            }
+            R.id.nav_signout -> {
+                auth.signOut()
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 }
