@@ -26,7 +26,7 @@ class SignInActivity : AppCompatActivity() {
         iniciarSesion(binding.emailEt.text.toString(), binding.passET.text.toString())
     }
 
-    fun iniciarSesion(email: String, pass: String) {
+    /*fun iniciarSesion(email: String, pass: String) {
         val email = binding.emailEt.text.toString()
         val pass = binding.passET.text.toString()
 
@@ -39,22 +39,34 @@ class SignInActivity : AppCompatActivity() {
                 ).addOnCompleteListener{
                     if (it.isSuccessful) {
                         println("aqui entra")
-                        abrirPerfil()
+                        val intent = Intent(this, CiudadesActivity::class.java)
+                        startActivity(intent)
                     } else {
-                        error()
                         Toast.makeText(this, it.exception.toString(), Toast.LENGTH_LONG).show()
                     }
                 }
             }
         }
-    }
+    }*/
 
-    fun error() {
-        Toast.makeText(this, "Ha habido un error", Toast.LENGTH_LONG).show()
-    }
-
-    fun abrirPerfil() {
-        val intent = Intent(this, CiudadesActivity::class.java)
-        startActivity(intent)
+    fun iniciarSesion(email: String, clave: String) {
+        println(email)
+        if (email.isNotEmpty() && clave.isNotEmpty()) {
+            binding.button.setOnClickListener {
+                println(email)
+                FirebaseAuth.getInstance().signInWithEmailAndPassword(
+                    email,
+                    clave
+                ).addOnCompleteListener{
+                    if (it.isSuccessful) {
+                        println("aqui entra")
+                        val intent = Intent(this, CiudadesActivity::class.java)
+                        startActivity(intent)
+                    } else {
+                        Toast.makeText(this, it.exception.toString(), Toast.LENGTH_LONG).show()
+                    }
+                }
+            }
+        }
     }
 }
