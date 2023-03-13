@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 
-class CiudadAdapter(private var listaCiudad: MutableList<Ciudad>,
+class CiudadAdapter(private var listaCiudad: List<Ciudad>,
                     private val OnItemDelete:(Int)->Unit,
                     private val OnItemUpdate:(Ciudad) -> Unit):RecyclerView.Adapter<CiudadViewHolder>() {
 
@@ -22,7 +22,7 @@ class CiudadAdapter(private var listaCiudad: MutableList<Ciudad>,
     }
 
     fun deleteItem(i: Int) {
-        listaCiudad.removeAt(i)
+        listaCiudad.dropLast(i)
         notifyItemRemoved(i)
     }
 }
