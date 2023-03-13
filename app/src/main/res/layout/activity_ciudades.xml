@@ -8,13 +8,13 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvCiudades"
-        android:layout_width="412dp"
-        android:layout_height="657dp"
+        android:layout_width="359dp"
+        android:layout_height="610dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.006" />
+        app:layout_constraintVertical_bias="0.297" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton"

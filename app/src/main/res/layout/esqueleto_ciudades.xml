@@ -24,7 +24,7 @@
 
             <ImageView
                 android:id="@+id/ivImagenCiudad"
-                android:layout_width="wrap_content"
+                android:layout_width="88dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 tools:srcCompat="@tools:sample/avatars" />
