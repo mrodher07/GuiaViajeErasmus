@@ -5,7 +5,9 @@ import android.graphics.BitmapFactory
 import android.view.View
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import www.iesmurgi.guiaviajeerasmus.databinding.EsqueletoCiudadesBinding
+
 
 class CiudadViewHolder (vista: View):RecyclerView.ViewHolder(vista) {
     private val binding = EsqueletoCiudadesBinding.bind(vista)
@@ -28,7 +30,13 @@ class CiudadViewHolder (vista: View):RecyclerView.ViewHolder(vista) {
 
             binding.tvNombreCiudad.text = ciudad.ciudad.toString()
             binding.tvNombrePais.text = ciudad.pais.toString()
-            binding.ivImagenCiudad.setImageResource(ciudad.imagenCiudad.toInt())
+           // binding.ivImagenCiudad.setImageResource(ciudad.imagenCiudad.toInt())
+
+            Glide.with(binding.tvNombreCiudad.context)
+                .load(ciudad.imagenCiudad.toInt())
+                .override(200, 200)
+                .into(binding.ivImagenCiudad)
+
 
             binding.btnEditarCiudad.setOnClickListener{
                 onItemUpdate(ciudad)
