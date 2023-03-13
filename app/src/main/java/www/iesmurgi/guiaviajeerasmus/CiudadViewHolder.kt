@@ -24,7 +24,10 @@ class CiudadViewHolder (vista: View):RecyclerView.ViewHolder(vista) {
                 val intent = Intent(itemView.context, ItemCiudadActivity::class.java)
                 intent.putExtra("nombreCiudad", ciudad.ciudad)
                 intent.putExtra("nombrePais", ciudad.pais)
+                intent.putExtra("descripcion", ciudad.descripcion)
                 intent.putExtra("imagenCiudad", ciudad.imagenCiudad)
+                intent.putExtra("infoLugares", ciudad.infoLugares)
+                intent.putExtra("infoComida", ciudad.infoComida)
                 ContextCompat.startActivity(itemView.context, intent, null)
             }
 
