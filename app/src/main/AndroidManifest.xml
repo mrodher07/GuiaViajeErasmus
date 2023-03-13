@@ -14,12 +14,18 @@
         android:theme="@style/Theme.GuiaViajeErasmus"
         tools:targetApi="31">
         <activity
-            android:name=".DescripcionCiudadActivity"
+            android:name=".AddCiudades"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+        <activity
+            android:name=".CiudadesActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ItemCiudadActivity"
+            android:exported="true" />
         <activity
             android:name=".SignUpActivity"
             android:exported="true" />

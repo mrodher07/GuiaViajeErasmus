@@ -57,7 +57,7 @@ class SignUpActivity : AppCompatActivity() {
                     firebaseAuth.createUserWithEmailAndPassword(gmail, pass).addOnCompleteListener {
                         if (it.isSuccessful) {
                             crearNuevoUsuarioDatabase(gmail, pass)
-                            val intent = Intent(this, SignInActivity::class.java)
+                            val intent = Intent(this, CiudadesActivity::class.java)
                             startActivity(intent)
                         } else {
                             Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()
