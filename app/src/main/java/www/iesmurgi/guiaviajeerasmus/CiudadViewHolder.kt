@@ -1,7 +1,9 @@
 package www.iesmurgi.guiaviajeerasmus
 
 import android.content.Intent
+import android.graphics.BitmapFactory
 import android.view.View
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import www.iesmurgi.guiaviajeerasmus.databinding.EsqueletoCiudadesBinding
 
@@ -18,7 +20,18 @@ class CiudadViewHolder (vista: View):RecyclerView.ViewHolder(vista) {
 
             itemView.setOnClickListener {
                 val intent = Intent(itemView.context, ItemCiudadActivity::class.java)
+                intent.putExtra("nombreCiudad", ciudad.ciudad)
+                intent.putExtra("nombrePais", ciudad.pais)
                 intent.putExtra("imagenCiudad", ciudad.imagenCiudad)
+                ContextCompat.startActivity(itemView.context, intent, null)
+            }
+
+            binding.tvNombreCiudad.text = ciudad.ciudad.toString()
+            binding.tvNombrePais.text = ciudad.pais.toString()
+            binding.ivImagenCiudad.setImageResource(ciudad.imagenCiudad.toInt())
+
+            binding.btnEditarCiudad.setOnClickListener{
+                onItemUpdate(ciudad)
             }
         }
 }
