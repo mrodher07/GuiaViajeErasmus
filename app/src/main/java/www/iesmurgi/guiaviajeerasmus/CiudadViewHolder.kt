@@ -28,6 +28,8 @@ class CiudadViewHolder (vista: View):RecyclerView.ViewHolder(vista) {
                 intent.putExtra("imagenCiudad", ciudad.imagenCiudad)
                 intent.putExtra("infoLugares", ciudad.infoLugares)
                 intent.putExtra("infoComida", ciudad.infoComida)
+                intent.putExtra("fotoLugar", ciudad.imagenLugares)
+
                 ContextCompat.startActivity(itemView.context, intent, null)
             }
 
@@ -44,5 +46,6 @@ class CiudadViewHolder (vista: View):RecyclerView.ViewHolder(vista) {
             binding.btnEditarCiudad.setOnClickListener{
                 onItemUpdate(ciudad)
             }
+
         }
 }

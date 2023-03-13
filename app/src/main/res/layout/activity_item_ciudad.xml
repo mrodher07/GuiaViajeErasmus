@@ -8,6 +8,15 @@
     android:orientation="vertical"
     tools:context=".ItemCiudadActivity">
 
+    <TextView
+        android:id="@+id/tvCiudadActual"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ciudad"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textStyle="bold" />
+
     <Button
         android:id="@+id/btnLugaresInteres"
         android:layout_width="293dp"
@@ -35,4 +44,5 @@
         android:textSize="20dp"
         android:textStyle="bold"
         app:cornerRadius="30dp" />
+
 </LinearLayout>
