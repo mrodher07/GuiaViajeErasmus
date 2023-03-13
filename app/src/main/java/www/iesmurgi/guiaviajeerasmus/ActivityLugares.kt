@@ -1,5 +1,6 @@
 package www.iesmurgi.guiaviajeerasmus
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import www.iesmurgi.guiaviajeerasmus.databinding.ActivityItemCiudadBinding
@@ -12,6 +13,11 @@ class ActivityLugares : AppCompatActivity() {
         binding = ActivityLugaresBinding.inflate(layoutInflater)
         setContentView(binding.root)
         init()
+
+        binding.btnVolver.setOnClickListener {
+            val intent = Intent(this, CiudadesActivity::class.java)
+            startActivity(intent)
+        }
     }
 
 
