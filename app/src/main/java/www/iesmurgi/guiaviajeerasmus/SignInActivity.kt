@@ -3,7 +3,6 @@ package www.iesmurgi.guiaviajeerasmus
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import www.iesmurgi.guiaviajeerasmus.databinding.ActivitySignInBinding
@@ -27,8 +26,6 @@ class SignInActivity : AppCompatActivity() {
         binding.btnIniciar.setOnClickListener {
             iniciarSesion(binding.emailEt.text.toString(), binding.passET.text.toString())
         }
-
-
     }
 
     /*fun iniciarSesion(email: String, pass: String) {
@@ -57,19 +54,21 @@ class SignInActivity : AppCompatActivity() {
     fun iniciarSesion(email: String, clave: String) {
         println(email)
         if (email.isNotEmpty() && clave.isNotEmpty()) {
-            FirebaseAuth.getInstance().signInWithEmailAndPassword(
-                email,
-                clave
-            ).addOnCompleteListener {
-                if (it.isSuccessful) {
-                    println("aqui entra")
-                    val intent = Intent(this, CiudadesActivity::class.java)
-                    startActivity(intent)
-                } else {
-                    Toast.makeText(this, it.exception.toString(), Toast.LENGTH_LONG).show()
+
+                println(email)
+                FirebaseAuth.getInstance().signInWithEmailAndPassword(
+                    email,
+                    clave
+                ).addOnCompleteListener{
+                    if (it.isSuccessful) {
+                        println("aqui entra")
+                        val intent = Intent(this, CiudadesActivity::class.java)
+                        startActivity(intent)
+                    } else {
+                        Toast.makeText(this, it.exception.toString(), Toast.LENGTH_LONG).show()
+                    }
                 }
 
-            }
         }
     }
 }

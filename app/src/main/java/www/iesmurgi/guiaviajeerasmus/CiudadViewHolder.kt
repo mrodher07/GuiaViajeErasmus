@@ -1,11 +1,11 @@
 package www.iesmurgi.guiaviajeerasmus
 
 import android.content.Intent
-import android.graphics.BitmapFactory
 import android.view.View
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+
 import www.iesmurgi.guiaviajeerasmus.databinding.EsqueletoCiudadesBinding
 
 
@@ -29,6 +29,7 @@ class CiudadViewHolder (vista: View):RecyclerView.ViewHolder(vista) {
                 intent.putExtra("infoLugares", ciudad.infoLugares)
                 intent.putExtra("infoComida", ciudad.infoComida)
                 intent.putExtra("fotoLugar", ciudad.imagenLugares)
+                intent.putExtra("fotoComida", ciudad.imagenComida)
 
                 ContextCompat.startActivity(itemView.context, intent, null)
             }

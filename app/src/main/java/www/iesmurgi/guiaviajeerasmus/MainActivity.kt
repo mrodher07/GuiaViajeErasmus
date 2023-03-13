@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.firebase.auth.FirebaseAuth
 import www.iesmurgi.guiaviajeerasmus.databinding.ActivityMainBinding
+import www.iesmurgi.guiaviajeerasmus.databinding.ActivitySignInBinding
+import www.iesmurgi.guiaviajeerasmus.databinding.ActivitySignUpBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -15,18 +17,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         firebaseAuth = FirebaseAuth.getInstance()
-        openLogin()
-        openRegister()
-    }
-
-    fun openLogin() {
+        firebaseAuth = FirebaseAuth.getInstance()
         binding.btnLogin.setOnClickListener {
             val intent = Intent(this, SignInActivity::class.java)
             startActivity(intent)
         }
-    }
 
-    fun openRegister() {
         binding.btnSignin.setOnClickListener {
             val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)

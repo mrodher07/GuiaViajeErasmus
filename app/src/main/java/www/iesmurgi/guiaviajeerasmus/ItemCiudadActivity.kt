@@ -9,6 +9,8 @@ class ItemCiudadActivity : AppCompatActivity() {
 
     private var fotoLugar:String = ""
     private var descripcionLugar:String = ""
+    private var fotoComida:String = ""
+    private var infoComida:String = ""
 
 
     private lateinit var binding: ActivityItemCiudadBinding
@@ -26,7 +28,10 @@ class ItemCiudadActivity : AppCompatActivity() {
         }
 
         binding.btnLugaresComida.setOnClickListener {
-            val intent = Intent(this, ActivityComida::class.java)
+            val intent = Intent(this, ActivityComida::class.java).apply {
+                putExtra("foto", fotoComida)
+                putExtra("descripcion", infoComida)
+            }
             startActivity(intent)
         }
 
@@ -43,5 +48,7 @@ class ItemCiudadActivity : AppCompatActivity() {
         binding.tvCiudadActual.text= bundle.getStringExtra("nombreCiudad")
         fotoLugar = bundle.getStringExtra("fotoLugar").toString()
         descripcionLugar = bundle.getStringExtra("descripcion").toString()
+        fotoComida = bundle.getStringExtra("fotoComida").toString()
+        infoComida = bundle.getStringExtra("infoComida").toString()
     }
 }
